@@ -1,4 +1,6 @@
 import type { Config } from "tailwindcss"
+import { fontFamily } from "tailwindcss/defaultTheme"
+import sharedConfig from "@leave-admin/ui/tailwind.config"
 
 const config = {
   darkMode: ["class"],
@@ -19,6 +21,9 @@ const config = {
       },
     },
     extend: {
+      fontFamily: {
+        sans: ["var(--font-sans)", ...fontFamily.sans],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

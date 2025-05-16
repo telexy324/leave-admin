@@ -2,10 +2,10 @@
 
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
-import { Button } from '@leave-admin/ui/components/button'
-import { Input } from '@leave-admin/ui/components/input'
-import { Label } from '@leave-admin/ui/components/label'
-import { Icons } from '@leave-admin/ui/components/icons'
+import { Button } from '@leave-admin/ui'
+import { Input } from '@leave-admin/ui'
+import { Label } from '@leave-admin/ui'
+import { Icons } from '@leave-admin/ui'
 
 export function LoginForm() {
   const router = useRouter()
@@ -47,35 +47,43 @@ export function LoginForm() {
   }
 
   return (
-    <form onSubmit={onSubmit} className="space-y-4">
-      <div className="space-y-2">
-        <Label htmlFor="email">邮箱</Label>
-        <Input
-          id="email"
-          name="email"
-          type="email"
-          required
-          placeholder="请输入邮箱"
-          disabled={loading}
-        />
-      </div>
-      <div className="space-y-2">
-        <Label htmlFor="password">密码</Label>
-        <Input
-          id="password"
-          name="password"
-          type="password"
-          required
-          placeholder="请输入密码"
-          disabled={loading}
-        />
+    <form onSubmit={onSubmit} className="space-y-6">
+      <div className="space-y-4">
+        <div className="space-y-2">
+          <Label htmlFor="email" className="text-sm font-medium leading-none">
+            邮箱
+          </Label>
+          <Input
+            id="email"
+            name="email"
+            type="email"
+            required
+            placeholder="请输入邮箱"
+            disabled={loading}
+            className="h-10"
+          />
+        </div>
+        <div className="space-y-2">
+          <Label htmlFor="password" className="text-sm font-medium leading-none">
+            密码
+          </Label>
+          <Input
+            id="password"
+            name="password"
+            type="password"
+            required
+            placeholder="请输入密码"
+            disabled={loading}
+            className="h-10"
+          />
+        </div>
       </div>
       {error && (
-        <div className="text-sm text-red-500 bg-red-50 p-3 rounded-md">
+        <div className="text-sm text-destructive bg-destructive/10 p-3 rounded-md">
           {error}
         </div>
       )}
-      <Button type="submit" className="w-full" disabled={loading}>
+      <Button type="submit" className="w-full h-10" disabled={loading}>
         {loading && (
           <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
         )}
