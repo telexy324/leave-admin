@@ -17,9 +17,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="light">
-      <head>
-        <link rel="stylesheet" href="@leave-admin/ui/globals.css" />
-      </head>
       <body className={`${inter.variable} font-sans antialiased`}>{children}</body>
     </html>
   )

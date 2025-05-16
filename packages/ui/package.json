@@ -37,7 +37,11 @@
       "import": "./src/index.ts",
       "require": "./src/index.ts"
     },
-    "./globals.css": "./src/globals.css",
+    "./globals.css": {
+      "types": "./src/globals.css",
+      "import": "./src/globals.css",
+      "require": "./src/globals.css"
+    },
     "./postcss.config": "./postcss.config.mjs",
     "./tailwind.config": "./tailwind.config.ts"
   }
